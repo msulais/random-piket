@@ -1,0 +1,452 @@
+.aboutDialog {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    width: 500px;
+    max-width: 100%;
+
+    > svg {
+        width: 64px;
+        height: 64px;
+    }
+
+    > div {
+        padding-top: 8px;
+
+        > h3 {
+            margin-bottom: 8px;
+            color: var(--color-primary);
+        }
+
+        > p {
+            font-size: 14px;
+
+            > a {
+                color: var(--color-secondary);
+                transition: all .25s;
+                border-radius: 2px;
+                font-weight: bold;
+                border: 1px solid transparent;
+
+                &:hover {
+                    background-color: var(--color-secondary-container);
+                    color: var(--color-on-secondary-container);
+                    padding: 0 4px;
+                    border-color: var(--color-secondary-container-outline);
+                }
+            }
+        }
+    }
+}
+
+.infoDialog {
+    width: 500px;
+    max-width: 100%;
+}
+
+.main {
+    padding: 0 8px 8px 8px;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+}
+
+.memberDialog {
+    > input {
+        min-width: 0;
+        width: 360px;
+        max-width: 100%;
+        padding: 12px 20px;
+        border-radius: 999999px;
+        margin-bottom: 16px;
+        font-size: 14px;
+        background-color: var(--color-surface-variant);
+        transition: outline 0s, background-color .25s, color .25s;
+
+        &::placeholder {
+            color: var(--color-on-background);
+        }
+
+        &:hover {
+            background-color: var(--color-surface-variant-outline);
+        }
+
+        &:focus {
+            background-color: transparent;
+            color: var(--color-on-background);
+            outline: 2px solid var(--color-primary);
+        }
+    }
+
+    > .errorMessage {
+        margin-top: 16px;
+        font-size: 14px;
+        text-align: center;
+        color: var(--color-error);
+
+        > code {
+            margin: 0 4px;
+            border: 1px solid var(--color-error);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+    }
+}
+
+.memberDialogFixedPlace {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    &::before {
+        content: 'Tempat khusus:';
+        white-space: nowrap;
+    }
+
+    > select {
+        appearance: none;
+        width: 200px;
+        padding: 12px 20px;
+        border-radius: 999999px;
+        font-size: 14px;
+        border: 2px solid transparent;
+        background-color: var(--color-surface-variant);
+        transition: outline 0s, background-color .25s, color .25s;
+
+        &:hover {
+            background-color: var(--color-surface-variant-outline);
+        }
+
+        &:focus {
+            background-color: var(--color-background);
+            color: var(--color-on-background);
+            border-color: var(--color-primary);
+            outline: none;
+        }
+    }
+}
+
+.memberDialogInfo {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    width: 350px;
+    max-width: 100%;
+
+    > :global(.icon) {
+        min-width: 24px;
+        min-height: 24px;
+    }
+
+    > p {
+        font-size: 14px;
+        line-height: 1.8em;
+
+        > code {
+            margin: 0 4px;
+            border: 1px solid var(--color-outline);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+    }
+}
+
+.memberDialogLastPlaces {
+    > p {
+        margin-bottom: 8px;
+    }
+    > div {
+        width: 360px;
+        max-width: 100%;
+        display: grid;
+        gap: 8px;
+        grid-template-columns: repeat(2, 1fr);
+        > select {
+            width: calc(356px / 2);
+            appearance: none;
+            padding: 12px 20px;
+            color: var(--color-on-background);
+            border-radius: 4px;
+            font-size: 14px;
+            border: 2px solid transparent;
+            background-color: var(--color-surface-variant);
+            transition: outline 0s, background-color .25s, color .25s;
+
+            &:hover {
+                background-color: var(--color-surface-variant-outline);
+            }
+
+            &:focus {
+                background-color: var(--color-background);
+                color: var(--color-on-background);
+                border-color: var(--color-primary);
+                outline: none;
+            }
+        }
+    }
+}
+
+.placeDialog {
+    > input {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 20px;
+        border-radius: 999999px;
+        margin-bottom: 16px;
+        font-size: 14px;
+        background-color: var(--color-surface-variant);
+        transition: outline 0s, background-color .25s, color .25s;
+
+        &::placeholder {
+            color: var(--color-on-background);
+        }
+
+        &:hover {
+            background-color: var(--color-surface-variant-outline);
+        }
+
+        &:focus {
+            background-color: transparent;
+            color: var(--color-on-background);
+            outline: 2px solid var(--color-primary);
+        }
+    }
+
+    > div {
+        padding-left: 20px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+
+        & label {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            gap: 8px;
+
+            & input {
+                text-align: center;
+                min-width: 0;
+                width: 100px;
+                max-width: 100%;
+                padding: 12px 20px;
+                border-radius: 999999px;
+                font-size: 14px;
+                background-color: var(--color-surface-variant);
+                transition: outline 0s, background-color .25s, color .25s;
+
+                &::placeholder {
+                    color: var(--color-on-background);
+                }
+
+                &:hover {
+                    background-color: var(--color-surface-variant-outline);
+                }
+
+                &:focus {
+                    color: var(--color-on-background);
+                    background-color: transparent;
+                    outline: 2px solid var(--color-primary);
+                }
+
+                &:invalid {
+                    outline: 2px solid var(--color-error);
+                }
+            }
+        }
+    }
+
+    > p {
+        margin-top: 16px;
+        font-size: 14px;
+        text-align: center;
+        color: var(--color-error);
+
+        > code {
+            margin: 0 4px;
+            border: 1px solid var(--color-error);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+    }
+}
+
+.section {
+    width: 100%;
+}
+
+.sectionBodyEmpty {
+    padding: 16px;
+    --h: calc(100dvh - 136px);
+    display: grid;
+    min-height: var(--h);
+    max-height: var(--h);
+    border-radius: 8px;
+    border: 1px solid var(--color-outline);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+
+    > :global(.icon) {
+        width: 64px;
+        height: 64px;
+
+        * {
+            fill: var(--color-primary);
+        }
+    }
+
+    > h2 {
+        font-weight: normal;
+    }
+}
+
+.sectionBodyItem {
+    position: relative;
+    border-radius: 4px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid transparent;
+    background-color: var(--color-surface-variant);
+    transition: all .25s, outline 0s;
+
+    [data-list] & {
+        aspect-ratio: auto;
+        flex-direction: row;
+        justify-content: space-between;
+
+        > h3 {
+            text-align: start;
+        }
+
+        > p {
+            text-align: end;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        outline: 2px solid var(--color-primary);
+    }
+
+    &[data-selected] {
+        background-color: var(--color-primary-container);
+        border-color: var(--color-primary-container-outline);
+
+        > button {
+            opacity: 1;
+        }
+
+        > :is(h3, p) {
+            color: var(--color-on-primary-container);
+        }
+    }
+
+    > h3 {
+        flex: 1;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    > p {
+        font-size: 14px;
+        text-align: center;
+        color: var(--color-primary);
+        font-weight: bold;
+    }
+}
+
+.sectionBodyItems {
+    overflow: hidden;
+    border: 1px solid var(--color-outline);
+    border-radius: 8px;
+
+    > div {
+        padding: 16px;
+        --h: calc(100dvh - 136px);
+        display: grid;
+        min-height: var(--h);
+        max-height: var(--h);
+        overflow: auto;
+        gap: 8px;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+
+        &[data-list] {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.sectionTopBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+
+    > h2 {
+        font-weight: normal;
+        font-size: 24px;
+    }
+}
+
+.sectionTopBarActions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px;
+        border-radius: 4px;
+        transition: all .25s;
+        border: 1px solid transparent;
+
+        &:hover {
+            background-color: var(--color-background-outline);
+            border-color: var(--color-outline-variant);
+        }
+    }
+}
+
+.themeDialog {
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 350px;
+    max-width: 100%;
+
+    > button {
+        display: flex;
+        align-items: center;
+        background-color: var(--color-surface-variant);
+        padding: 8px;
+        border-radius: 4px;
+        gap: 16px;
+        border: 1px solid transparent;
+        transition: all .25s;
+
+        &:hover {
+            background-color: var(--color-surface-variant-outline);
+        }
+
+        > span {
+            font-size: 16px;
+        }
+    }
+}

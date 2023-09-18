@@ -1,9 +1,10 @@
 /* @refresh reload */
 import { render } from 'solid-js/web'
 
-import './index.css'
+import './fonts.scss'
+import './index.scss'
 import App from './App'
 
-const root = document.getElementById('root')
+const root = document.getElementById('__app__')
 
 render(() => <App />, root!)

@@ -1,0 +1,39 @@
+@mixin font($family, $style, $weight, $url){
+    @font-face {
+        font-family: $family;
+        font-style: $style;
+        font-weight: $weight;
+        font-display: swap;
+        src: url($url) format('ttf');
+    }
+}
+
+@include font('Roboto', normal, 100, '/src/assets/Roboto-Thin.ttf');
+@include font('Roboto', normal, 300, '/src/assets/Roboto-Light.ttf');
+@include font('Roboto', normal, 400, '/src/assets/Roboto-Regular.ttf');
+@include font('Roboto', normal, 500, '/src/assets/Roboto-Medium.ttf');
+@include font('Roboto', normal, 700, '/src/assets/Roboto-Bold.ttf');
+@include font('Roboto', normal, 900, '/src/assets/Roboto-Black.ttf');
+
+@include font('Roboto', italic, 100, '/src/assets/Roboto-ThinItalic.ttf');
+@include font('Roboto', italic, 300, '/src/assets/Roboto-LightItalic.ttf');
+@include font('Roboto', italic, 400, '/src/assets/Roboto-RegularItalic.ttf');
+@include font('Roboto', italic, 500, '/src/assets/Roboto-MediumItalic.ttf');
+@include font('Roboto', italic, 700, '/src/assets/Roboto-BoldItalic.ttf');
+@include font('Roboto', italic, 900, '/src/assets/Roboto-BlackItalic.ttf');
+
+@include font('Roboto Mono', normal, 100, '/src/assets/static/RobotoMono-Thin.ttf');
+@include font('Roboto Mono', normal, 200, '/src/assets/static/RobotoMono-ExtraLight.ttf');
+@include font('Roboto Mono', normal, 300, '/src/assets/static/RobotoMono-Light.ttf');
+@include font('Roboto Mono', normal, 400, '/src/assets/static/RobotoMono-Regular.ttf');
+@include font('Roboto Mono', normal, 500, '/src/assets/static/RobotoMono-Medium.ttf');
+@include font('Roboto Mono', normal, 600, '/src/assets/static/RobotoMono-SemiBold.ttf');
+@include font('Roboto Mono', normal, 700, '/src/assets/static/RobotoMono-Bold.ttf');
+
+@include font('Roboto Mono', italic, 100, '/src/assets/static/RobotoMono-ThinItalic.ttf');
+@include font('Roboto Mono', italic, 200, '/src/assets/static/RobotoMono-ExtraLightItalic.ttf');
+@include font('Roboto Mono', italic, 300, '/src/assets/static/RobotoMono-LightItalic.ttf');
+@include font('Roboto Mono', italic, 400, '/src/assets/static/RobotoMono-RegularItalic.ttf');
+@include font('Roboto Mono', italic, 500, '/src/assets/static/RobotoMono-MediumItalic.ttf');
+@include font('Roboto Mono', italic, 600, '/src/assets/static/RobotoMono-SemiBoldItalic.ttf');
+@include font('Roboto Mono', italic, 700, '/src/assets/static/RobotoMono-BoldItalic.ttf');

@@ -1,0 +1,44 @@
+.topBarLeading {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    > button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px;
+        border-radius: 4px;
+        transition: all .25s;
+
+        &:hover {
+            background-color: var(--color-surface-variant-outline);
+        }
+    }
+}
+
+.topBarTrailing {
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    color: var(--color-on-primary);
+    border-radius: 4px;
+    transition: all .25s;
+
+    &:hover {
+        background-color: var(--color-primary-outline);
+        > :global(.icon) {
+            transform: rotate(360deg);
+        }
+    }
+
+    > :global(.icon){
+        transition: all .5s;
+
+        * {
+            fill: var(--color-on-primary);
+        }
+    }
+}

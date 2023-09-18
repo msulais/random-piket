@@ -1,0 +1,237 @@
+.actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    >button {
+        display: none;
+    }
+
+    > :is(button, div) {
+        align-items: center;
+        gap: 8px;
+        padding: 6px;
+        border-radius: 4px;
+        transition: all .25s;
+        border: 1px solid var(--color-outline);
+
+        &:hover {
+            background-color: var(--color-background);
+        }
+
+        > :global(.icon) {
+            transition: all .25s;
+        }
+    }
+}
+
+.copyHistory {
+    &[data-copied] {
+        >svg:first-child {
+            display: none;
+        }
+
+        >svg:last-child {
+            display: block;
+        }
+    }
+
+    >svg:last-child {
+        display: none;
+    }
+}
+
+.dateRange {
+    margin-bottom: 32px;
+
+    & label {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 8px;
+    }
+
+    & input {
+        min-width: 0;
+        width: 350px;
+        max-width: 100%;
+        padding: 12px 20px;
+        border-radius: 999999px;
+        font-size: 14px;
+        background-color: var(--color-surface-variant);
+        transition: outline 0s, background-color .25s, color .25s;
+
+        &::placeholder {
+            color: var(--color-on-background);
+        }
+
+        &:hover {
+            background-color: var(--color-surface-variant-outline);
+        }
+
+        &:focus {
+            background-color: transparent;
+            color: var(--color-on-background);
+            outline: 2px solid var(--color-primary);
+        }
+    }
+}
+
+.empty {
+    min-height: calc(100dvh - 72px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    :global(.icon) {
+        width: 88px;
+        height: 88px;
+    }
+
+    & h1 {
+        font-weight: normal;
+    }
+}
+
+.group {
+    background-color: var(--color-background);
+    border-radius: 8px;
+    border: 1px solid var(--color-surface-variant);
+    transition: all .25s, outline 0s;
+
+    &:not([data-copied]):hover {
+        cursor: pointer;
+        outline: 2px solid var(--color-primary);
+    }
+
+    &[data-copied] {
+        >.groupContent {
+            display: none;
+        }
+
+        >.groupCopiedMessage {
+            display: flex;
+        }
+    }
+}
+
+.groupContent {
+    >h3 {
+        color: var(--color-primary);
+        padding: 12px;
+        border-bottom: 3px solid var(--color-surface-variant);
+    }
+
+    >ul {
+        padding: 16px 16px 16px 32px;
+    }
+}
+
+.groupCopiedMessage {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 32px;
+    height: 100%;
+}
+
+.groups {
+    display: grid;
+    width: 100%;
+    gap: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.history {
+    background-color: var(--color-background-outline);
+    width: 1000px;
+    max-width: calc(100% - 16px);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: all .25s;
+
+    &[open]>summary {
+        padding-bottom: 16px;
+
+        & .actions {
+            >button {
+                display: flex;
+            }
+
+            >div> :global(.icon) {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    & summary {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.main {
+    >h1 {
+        width: 100%;
+        font-weight: normal;
+        padding-top: 32px;
+        padding-bottom: 16px;
+        text-align: center;
+    }
+}
+
+.messageDialog {
+    margin-bottom: 64px;
+    width: 500px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    & blockquote {
+        padding: 16px;
+        border-radius: 8px;
+        border: 2px solid var(--color-primary);
+        background-color: var(--color-background-outline);
+    }
+}
+
+.topBarTrailing {
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 18px;
+    color: var(--color-on-primary);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all .25s;
+
+    &:hover {
+        background-color: var(--color-primary-container);
+        color: var(--color-on-primary-container);
+        border-color: var(--color-primary-container-outline);
+
+        > :global(.icon) * {
+            fill: var(--color-on-primary-container);
+        }
+    }
+
+    > :global(.icon) {
+        width: 20px;
+        height: 20px;
+
+        * {
+            fill: var(--color-on-primary);
+        }
+    }
+}

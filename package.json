@@ -6,13 +6,20 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tauri": "tauri"
   },
   "dependencies": {
+    "@tauri-apps/api": "^1.4.0",
+    "date-time-picker-solid": "^1.1.1",
     "sass": "^1.66.1",
-    "solid-js": "^1.7.8"
+    "solid-js": "^1.7.8",
+    "tauri": "^0.15.0",
+    "tauri-settings": "^0.3.4"
   },
   "devDependencies": {
+    "@tauri-apps/cli": "^1.4.0",
+    "@types/node": "^20.5.7",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-solid": "^2.7.0"

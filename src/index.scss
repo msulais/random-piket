@@ -1,0 +1,226 @@
+:root {
+    --color-on-primary: #ffffff;
+    --color-primary: #006c45;
+    --color-primary-outline: #00a56c;
+    --color-on-primary-container: #002112;
+    --color-primary-container: #75fbb8;
+    --color-primary-container-outline: #31c284;
+    --color-on-secondary: #ffffff;
+    --color-secondary: #4e6356;
+    --color-secondary-outline: #7f9687;
+    --color-on-secondary-container: #0b1f15;
+    --color-secondary-container: #d0e8d7;
+    --color-secondary-container-outline: #99b1a1;
+    --color-on-tertiary: #ffffff;
+    --color-tertiary: #3c6472;
+    --color-tertiary-outline: #6f97a6;
+    --color-on-tertiary-container: #001f28;
+    --color-tertiary-container: #bfe9f9;
+    --color-tertiary-container-outline: #89b1c1;
+    --color-on-error: #ffffff;
+    --color-error: #ba1a1a;
+    --color-error-outline: #ff5449;
+    --color-on-error-container: #410002;
+    --color-error-container: #ffdad6;
+    --color-error-container-outline: #ff897d;
+    --color-on-background: #191c1a;
+    --color-background: #fbfdf8;
+    --color-background-outline: #eff1ed;
+    --color-on-surface-variant: #404943;
+    --color-surface-variant: #dce5dc;
+    --color-surface-variant-outline: #a5ada6;
+    --color-outline: #707972;
+    --color-outline-variant: #c0c9c1;
+
+    &.dark {
+        --color-on-primary: #003822;
+        --color-primary: #55de9e;
+        --color-primary-outline: #00a56c;
+        --color-on-primary-container: #75fbb8;
+        --color-primary-container: #005233;
+        --color-primary-container-outline: #006c45;
+        --color-on-secondary: #203529;
+        --color-secondary: #b4ccbb;
+        --color-secondary-outline: #7f9687;
+        --color-on-secondary-container: #d0e8d7;
+        --color-secondary-container: #364b3f;
+        --color-secondary-container-outline: #4e6356;
+        --color-on-tertiary: #053542;
+        --color-tertiary: #a4cddd;
+        --color-tertiary-outline: #6f97a6;
+        --color-on-tertiary-container: #bfe9f9;
+        --color-tertiary-container: #234c59;
+        --color-tertiary-container-outline: #3c6472;
+        --color-on-error: #690005;
+        --color-error: #ffb4ab;
+        --color-error-outline: #ff5449;
+        --color-on-error-container: #ffdad6;
+        --color-error-container: #93000a;
+        --color-error-container-outline: #ba1a1a;
+        --color-on-background: #e1e3df;
+        --color-background: #191c1a;
+        --color-background-outline: #393c39;
+        --color-on-surface-variant: #c0c9c1;
+        --color-surface-variant: #404943;
+        --color-surface-variant-outline: #58605a;
+        --color-outline: #8a938b;
+        --color-outline-variant: #404943;
+
+        color-scheme: dark;
+        & * {
+            color-scheme: dark;
+        }
+    }
+    &.system {
+        @media (prefers-color-scheme: dark) {
+            --color-on-primary: #003822;
+            --color-primary: #55de9e;
+            --color-primary-outline: #00a56c;
+            --color-on-primary-container: #75fbb8;
+            --color-primary-container: #005233;
+            --color-primary-container-outline: #006c45;
+            --color-on-secondary: #203529;
+            --color-secondary: #b4ccbb;
+            --color-secondary-outline: #7f9687;
+            --color-on-secondary-container: #d0e8d7;
+            --color-secondary-container: #364b3f;
+            --color-secondary-container-outline: #4e6356;
+            --color-on-tertiary: #053542;
+            --color-tertiary: #a4cddd;
+            --color-tertiary-outline: #6f97a6;
+            --color-on-tertiary-container: #bfe9f9;
+            --color-tertiary-container: #234c59;
+            --color-tertiary-container-outline: #3c6472;
+            --color-on-error: #690005;
+            --color-error: #ffb4ab;
+            --color-error-outline: #ff5449;
+            --color-on-error-container: #ffdad6;
+            --color-error-container: #93000a;
+            --color-error-container-outline: #ba1a1a;
+            --color-on-background: #e1e3df;
+            --color-background: #191c1a;
+            --color-background-outline: #393c39;
+            --color-on-surface-variant: #c0c9c1;
+            --color-surface-variant: #404943;
+            --color-surface-variant-outline: #58605a;
+            --color-outline: #8a938b;
+            --color-outline-variant: #404943;
+
+            color-scheme: dark;
+            & * {
+                color-scheme: dark;
+            }
+        }
+    }
+}
+
+* {
+    background-color: transparent;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+
+    @media print {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+code, code * {
+    font-family: 'Roboto Mono', monospace;
+}
+
+html {
+    background-color: var(--color-background);
+    border-radius: 8px;
+}
+input, button, textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: block;
+}
+
+:is(button, summary):hover:not(:disabled) {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+dialog::backdrop {
+    background-color: rgb(0 0 0 / .5);
+}
+
+img {
+    display: block;
+}
+
+button, summary, .icon, :is(button, summary, .icon) * {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+input, textarea, button, select, a, summary, .icon {
+    -webkit-tap-highlight-color: transparent;
+}
+
+dialog {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-outline-variant);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    outline: none;
+}
+
+header {
+    margin: 8px;
+    width: calc(100% - 16px);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px -2px rgb(0 0 0 / .2);
+    background-color: var(--color-surface-variant);
+    border: 1px solid var(--color-outline-variant);
+    position: sticky;
+    top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    z-index: 2;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%
+}
+
+.icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    & * {
+        fill: var(--color-on-background);
+    }
+}
+
+#__app__ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
