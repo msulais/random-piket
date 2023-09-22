@@ -21,17 +21,7 @@ export type Settings = {
             min: number
             max: number
         },
-        members: {
-            gridView: boolean
-        },
-        places: {
-            gridView: boolean
-        },
     },
-    historyPage: {
-        fromDate: Date | null
-        toDate: Date | null
-    }
 }
 
 export type SettingsJSON = {
@@ -42,17 +32,7 @@ export type SettingsJSON = {
             min: number
             max: number
         },
-        members: {
-            gridView: boolean
-        },
-        places: {
-            gridView: boolean
-        },
     },
-    historyPage: {
-        fromDate: string
-        toDate: string
-    }
 }
 
 export type ElementEvent<T = Element> = MouseEvent & {

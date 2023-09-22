@@ -1,45 +1,20 @@
-.exportDialog {
-    width: 360px;
-    max-width: 100%;
-    display: grid;
-    gap: 8px;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+.group {
+    border: 1px solid #000;
+    break-inside: avoid;
+    border-radius: 4px;
+    transition: all .25s;
 
-    > button {
-        display: flex;
-        padding: 16px;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        aspect-ratio: 16 / 9;
-        background-color: var(--color-surface-variant);
-        border-radius: 4px;
-        gap: 8px;
-        font-family: 'Roboto Mono', monospace;
-        border: 1px solid transparent;
-        transition: all .25s;
-
-        &:not(:disabled):hover {
-            background-color: var(--color-primary-container);
-            border-color: var(--color-primary-container-outline);
-
-            > :is(p, h3){
-                color: var(--color-on-primary-container);
+    &:not([data-copied]){
+        @media (hover: hover) {
+            &:hover {
+                cursor: pointer;
+                background-color: #f0f0f0;
             }
         }
-    }
-}
 
-.group {
-    background-color: var(--color-surface-variant);
-    border-radius: 8px;
-    border: 1px solid var(--color-background);
-    break-inside: avoid;
-    transition: all .25s, outline 0s;
-
-    &:not([data-copied]):hover {
-        cursor: pointer;
-        outline: 2px solid var(--color-primary);
+        &:active {
+            background-color: #f0f0f0;
+        }
     }
 
     &[data-copied] {
@@ -52,41 +27,34 @@
         }
     }
 
-    @media print {
-        background-color: transparent;
-        border-radius: 0;
-        border: 1px solid #000;
-        outline: none !important;
+    & * {
+        -webkit-user-select: none;
+        user-select: none;
     }
 }
 
 .groupContent {
-    > h3 {
-        color: var(--color-primary);
+    & p {
+        color: #000;
         padding: 12px;
-        border-bottom: 3px solid var(--color-background);
+        font-weight: bold;
+        border-bottom: 1px solid #000;
 
         @media print {
-            font-size: 11pt;
-            color: #000;
-            border-bottom: 1px solid #000;
-            padding: 4px;
+            padding: 8px;
         }
     }
 
-    > ul {
+    & ul {
         padding: 16px 16px 16px 32px;
 
         @media print {
-            padding: 4px 4px 4px 24px;
+            padding: 8px 8px 8px 28px;
         }
+    }
 
-        > li {
-            @media print {
-                font-size: 11pt;
-                color: #000;
-            }
-        }
+    & li {
+        color: #000;
     }
 }
 
@@ -98,6 +66,10 @@
     gap: 16px;
     padding: 32px;
     height: 100%;
+
+    & :is(p, :global(.icon)) {
+        color: #000;
+    }
 }
 
 .loading {
@@ -129,8 +101,34 @@
     }
 }
 
+.main {
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    width: 800px;
+    max-width: calc(100% - 32px);
+    box-shadow: 0 4px 8px var(--color-shadow);
+    background-color: #fff;
+
+    @media print {
+        padding: 0;
+        border-radius: 0;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+
+        & :is(p, li) {
+            font-size: 11pt;
+        }
+
+        & h3 {
+            font-size: 16pt;
+        }
+    }
+}
+
 .printTitle {
-    display: none;
     margin-bottom: 24px;
     gap: 24px;
     width: 100%;
@@ -141,7 +139,7 @@
             display: flex;
             align-items: center;
             gap: 16px;
-            border-bottom: 1px solid #000;
+            border-bottom: 3px solid #000;
             padding: 8px;
             margin-bottom: 24px;
 
@@ -154,40 +152,23 @@
 
     & :is(p, h3) {
         text-align: center;
+        color: #000;
     }
 
     & img {
-        width: 80px;
-    }
-
-    @media print {
-        display: block;
-
-        & img {
-            width: 3cm;
-        }
-
-        & h3 {
-            font-size: 14pt;
-            color: #000;
-        }
-
-        & p {
-            font-size: 11pt;
-            color: #000;
-        }
+        width: 100px;
     }
 }
 
 .results {
     overflow: auto;
-    padding: 2px 8px 8px 8px;
+    padding: 8px;
     display: grid;
-    width: 100%;
+    width: calc(100% - 2px);
     gap: 8px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
-    @media (max-width: 250px) {
+    @media (max-width: 232px) {
         grid-template-columns: 1fr;
     }
 

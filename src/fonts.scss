@@ -8,6 +8,13 @@
     }
 }
 
+@font-face {
+    font-family: 'Material Symbols Rounded';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/src/assets/fonts/Icons/materal-design-icons-rounded.woff2') format('woff2');
+}
+
 @include font('Roboto', normal, 100, '/src/assets/Roboto-Thin.ttf');
 @include font('Roboto', normal, 300, '/src/assets/Roboto-Light.ttf');
 @include font('Roboto', normal, 400, '/src/assets/Roboto-Regular.ttf');

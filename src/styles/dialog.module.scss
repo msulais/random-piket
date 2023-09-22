@@ -1,5 +1,5 @@
 .dialog {
-    border-radius: 8px;
+    border-radius: 16px;
     overflow: hidden;
 
     > div {
@@ -25,21 +25,38 @@
     gap: 4px;
     padding: 32px;
 
-    > :is(button, a) {
-        display: flex;
-        align-items: center;
+    & :is(button, a) {
         color: var(--color-on-background);
-        gap: 8px;
         padding: 12px 16px;
         font-size: 12px;
+        min-width: 100px;
         font-weight: bold;
         border-radius: 4px;
         transition: all .25s;
+        background-color: var(--color-background-hover);
         border: 1px solid var(--color-outline);
 
-        &:hover {
-            background-color: var(--color-background-outline);
-            border-color: var(--color-outline-variant);
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-background-outline);
+            }
         }
+
+        &:active {
+            background-color: var(--color-background-outline);
+
+            > * {
+                scale: .85;
+            }
+        }
+    }
+
+    & div {
+        width: 100%;
+        gap: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .25s;
     }
 }
