@@ -1,28 +1,11 @@
-## Usage
+# Piket Randomizer
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+This app built to randomize teams for some places.
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+## Installation
 
-## Available Scripts
+Please checkout [Tauri](https://v2.tauri.app/) for more info, how to install this project.
 
-In the project directory, you can run:
+## Bugs
 
-### `npm run dev`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-Learn more about deploying your application with the [documentations](https://vitejs.dev/guide/static-deploy.html)
+There's a lot bug happens in this app. This is the reason I don't use this anymore.
